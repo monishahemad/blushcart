@@ -1,5 +1,19 @@
-# BLUSHCART
+# Alfaaz (अल्फ़ाज़)
 
-Beauty e-commerce storefront and backend starter prepared for deployment.
+A warm, modern shayari discovery prototype designed for readers who love Hindi
+and Urdu poetry. It includes searchable and filterable shayari, poet discovery,
+saved poems, sharing, light/dark themes, and a writing dialog.
 
-This repository contains the BLUSHCART V9 launch-ready build, including customer storefront, admin dashboard, SQLite backend, Razorpay-ready payment flow, order tracking, Docker deployment files, and health checks.
+## Start the app
+
+No coding tools or packages are required beyond Python 3:
+
+```bash
+python server.py
+```
+
+Then open <http://localhost:5000> in your browser.
+
+This first version stores interactions only in the current browser session. A
+future production version can add user accounts, a database, moderation, and an
+admin dashboard.

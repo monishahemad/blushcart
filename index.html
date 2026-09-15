@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Alfaaz — Hindi and Urdu shayari, poets and daily inspiration." />
+    <title>Alfaaz — दिल से, अल्फ़ाज़ तक</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Alfaaz home">
+        <span class="brand-mark">अ</span>
+        <span>अल्फ़ाज़<small>दिल से, अल्फ़ाज़ तक</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="#home">होम</a>
+        <a href="#shayari">शायरी</a>
+        <a href="#poets">शायर</a>
+        <a href="#topics">विषय</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="themeButton" aria-label="Switch theme" title="Switch theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42M7.06 16.94l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+        </button>
+        <button class="outline-button" id="writeButton">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5 5 5M4 20l4.5-1 10-10a2.12 2.12 0 0 0-3-3l-10 10L4 20Z"/></svg>
+          लिखें
+        </button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> आज का एहसास</p>
+          <h1>हर जज़्बात को<br /><em>मिलें अल्फ़ाज़</em></h1>
+          <p class="hero-description">हज़ारों दिलों से निकली शायरी पढ़ें, अपने पसंदीदा शायर खोजें और अपनी कलम से दुनिया को छू लें।</p>
+          <div class="search-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="searchInput" type="search" placeholder="शायरी, शायर या विषय खोजें..." aria-label="Search shayari" />
+            <kbd>⌘ K</kbd>
+          </div>
+          <div class="popular-searches">
+            <span>लोकप्रिय:</span>
+            <button data-search="इश्क़">इश्क़</button>
+            <button data-search="ज़िंदगी">ज़िंदगी</button>
+            <button data-search="दोस्ती">दोस्ती</button>
+            <button data-search="सफ़र">सफ़र</button>
+          </div>
+        </div>
+
+        <div class="featured-card" aria-label="Featured shayari">
+          <span class="large-quote">“</span>
+          <p class="featured-label">आज की शायरी</p>
+          <blockquote>हज़ारों ख़्वाहिशें ऐसी<br />कि हर ख़्वाहिश पे दम निकले,<br />बहुत निकले मेरे अरमान<br />लेकिन फिर भी कम निकले।</blockquote>
+          <div class="featured-footer">
+            <div class="poet-avatar">मि</div>
+            <div><strong>मिर्ज़ा ग़ालिब</strong><span>1797 — 1869</span></div>
+            <button class="round-button bookmark" aria-label="Save shayari" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17l-6-4-6 4V4Z"/></svg>
+            </button>
+            <button class="round-button share-button" aria-label="Share shayari">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="shayari">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span></span> चुनिंदा कलाम</p><h2>आपके लिए</h2></div>
+          <button class="text-button" id="randomButton">कुछ नया सुनाएँ <span>↗</span></button>
+        </div>
+        <div class="filter-row" id="topics">
+          <button class="filter active" data-filter="all">सभी</button>
+          <button class="filter" data-filter="ishq">इश्क़</button>
+          <button class="filter" data-filter="zindagi">ज़िंदगी</button>
+          <button class="filter" data-filter="dosti">दोस्ती</button>
+          <button class="filter" data-filter="judai">जुदाई</button>
+          <button class="filter" data-filter="hausla">हौसला</button>
+        </div>
+
+        <div class="poetry-grid" id="poetryGrid">
+          <article class="poetry-card" data-category="ishq" data-searchable="इश्क़ मोहब्बत फ़ैज़ अहमद फ़ैज़">
+            <div class="card-top"><span class="tag">इश्क़</span><button class="mini-bookmark bookmark" aria-label="Save" aria-pressed="false">♡</button></div>
+            <blockquote>और भी दुख हैं ज़माने में<br />मोहब्बत के सिवा,<br />राहतें और भी हैं<br />वस्ल की राहत के सिवा।</blockquote>
+            <div class="card-author"><div class="avatar rust">फ़ै</div><div><strong>फ़ैज़ अहमद फ़ैज़</strong><span>1,284 पाठक</span></div><button class="share-button" aria-label="Share">↗</button></div>
+          </article>
+          <article class="poetry-card accent" data-category="zindagi" data-searchable="ज़िंदगी सफ़र निदा फ़ाज़ली">
+            <div class="card-top"><span class="tag">ज़िंदगी</span><button class="mini-bookmark bookmark" aria-label="Save" aria-pressed="false">♡</button></div>
+            <blockquote>कभी किसी को मुकम्मल<br />जहाँ नहीं मिलता,<br />कहीं ज़मीं तो कहीं<br />आसमाँ नहीं मिलता।</blockquote>
+            <div class="card-author"><div class="avatar sage">नि</div><div><strong>निदा फ़ाज़ली</strong><span>2,103 पाठक</span></div><button class="share-button" aria-label="Share">↗</button></div>
+          </article>
+          <article class="poetry-card" data-category="hausla" data-searchable="हौसला दिल जिगर मुरादाबादी">
+            <div class="card-top"><span class="tag">हौसला</span><button class="mini-bookmark bookmark" aria-label="Save" aria-pressed="false">♡</button></div>
+            <blockquote>ये इश्क़ नहीं आसाँ<br />इतना ही समझ लीजे,<br />इक आग का दरिया है<br />और डूब के जाना है।</blockquote>
+            <div class="card-author"><div class="avatar gold">जि</div><div><strong>जिगर मुरादाबादी</strong><span>986 पाठक</span></div><button class="share-button" aria-label="Share">↗</button></div>
+          </article>
+        </div>
+        <p class="empty-state" id="emptyState">इस खोज के लिए कोई शायरी नहीं मिली। कोई दूसरा शब्द आज़माएँ।</p>
+      </section>
+
+      <section class="poets-section" id="poets">
+        <div><p class="eyebrow"><span></span> महान हस्तियाँ</p><h2>लोकप्रिय शायर</h2></div>
+        <div class="poet-list">
+          <div class="poet-pill"><span>ग़ा</span><strong>मिर्ज़ा ग़ालिब<small>2,456 कलाम</small></strong></div>
+          <div class="poet-pill"><span>गु</span><strong>गुलज़ार<small>1,892 कलाम</small></strong></div>
+          <div class="poet-pill"><span>फ़ै</span><strong>फ़ैज़ अहमद फ़ैज़<small>1,247 कलाम</small></strong></div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#home" class="active">⌂<span>होम</span></a><a href="#shayari">♧<span>खोजें</span></a><button id="mobileWrite">＋<span>लिखें</span></button><a href="#poets">♙<span>शायर</span></a><button class="mobileSaved">♡<span>सहेजे</span></button>
+    </nav>
+
+    <dialog id="writeDialog">
+      <form method="dialog" id="writeForm">
+        <div class="dialog-heading"><div><p class="eyebrow"><span></span> आपकी कलम</p><h2>अपनी शायरी लिखें</h2></div><button value="cancel" class="close-button" aria-label="Close">×</button></div>
+        <label>शीर्षक<input id="poemTitle" required placeholder="अपनी रचना को एक नाम दें" /></label>
+        <label>आपके अल्फ़ाज़<textarea id="poemText" required rows="7" placeholder="जो दिल में है, यहाँ लिखें..."></textarea></label>
+        <div class="dialog-actions"><button value="cancel" class="outline-button">अभी नहीं</button><button type="submit" value="default" class="primary-button">महफ़िल में जोड़ें</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
